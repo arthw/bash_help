@@ -1,2 +1,2 @@
 # bash_help
-small script of bash (shell) for daily work
+Small script of bash (shell) for daily work
