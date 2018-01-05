@@ -2,6 +2,11 @@ time_start=$(date +%s)
 
 p_run_time()
 {
+  if [ $# -lt 2 ]; then
+    act="I"
+  else
+    act=$1 
+  fi
   time_end=$(date +%s)
   echo "$1 took $((time_end-time_start)) s"
 }
