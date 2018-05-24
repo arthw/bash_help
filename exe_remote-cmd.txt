@@ -1,0 +1,17 @@
+exe_remote_cmd(){
+  scpicmd=$1
+  passwd=$2
+  if [ $# -gt 3 ]; then
+     timeout=$3
+  else
+     timeout=300
+  fi
+  expect -c "
+  set timeout 1200
+  spawn ${scpicmd}
+  expect {
+            \"*assword\" {set timeout $timeout; send \"$passwd\r\";}
+            \"yes/no\" {send \"yes\r\"; exp_continue;}
+        }
+  expect eof"
+}
