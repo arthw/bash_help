@@ -1,4 +1,9 @@
 #!/bin/bash
+
+# Drafted by Jianyu Zhang
+# zhang.jianyu@outlook.com
+# Please enjoy it freely
+
 sudo apt-get update
 
 sudo apt-get install -y \
