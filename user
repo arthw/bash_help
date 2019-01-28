@@ -1,0 +1,13 @@
+adduser
+
+userdel
+
+Add sudo:
+1.
+usermod -g root new_user 
+
+2.
+vi /etc/sudoers
+Allows people in group wheel to run all commands
+root ALL=(ALL) ALL
+new_user ALL=(ALL) ALL 
