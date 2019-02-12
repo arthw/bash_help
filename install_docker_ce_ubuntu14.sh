@@ -35,13 +35,13 @@ sudo echo "{
   \"ipv6\": true,
   \"fixed-cidr-v6\": \"2001::1/64\",
   \"live-restore\": true,
-  \"insecure-registries\" : [ \"10.124.100.184:5000\" ]
+  \"insecure-registries\" : [ \"10.10.10.10:5000\" ]
 }" > /etc/docker/daemon.json
 
-sudo echo "DOCKER_OPTS=\"--dns 64.104.123.144 --dns 8.8.8.8 --dns 8.8.4.4\"
-export no_proxy=localhost,127.0.0.1,10.124.100.184,\$no_proxy
-export http_proxy=http://proxy.esl.cisco.com:8080
-export https_proxy=http://proxy.esl.cisco.com:8080" >> /etc/default/docker
+sudo echo "DOCKER_OPTS=\"--dns 8.8.8.8 --dns 8.8.4.4\"
+export no_proxy=localhost,127.0.0.1,\$no_proxy
+export http_proxy=http://proxy.xxx.com:8080
+export https_proxy=http://proxy.xxx.com:8080" >> /etc/default/docker
 
 sudo service docker restart
 
