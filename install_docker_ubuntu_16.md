@@ -1,22 +1,23 @@
-Install docker.io
+###Install docker.io
 ```
 sudo apt-get update
 sudo apt-get remove docker
 sudo apt install docker.io
 ```
 
-Add local user in docker group (avoid to use sudo in next time)
+###Add local user in docker group (avoid to use sudo in next time)
 ```
 sudo groupadd -f docker
 sudo usermod -aG docker $USER
 ```
 
-Add proxy for docker pull
+###Add proxy for docker pull
 ```
 sudo mkdir -p /etc/systemd/system/docker.service
+```
+```
 sudo vi  /etc/systemd/system/docker.service.d/https-proxy.conf
 ```
-
 Insert following content:
 ```
 [Service]
@@ -26,7 +27,6 @@ Environment="HTTPS_PROXY=http://xxx.com:888/"
 ```
 sudo vi  /etc/systemd/system/docker.service.d/http-proxy.conf
 ```
-
 Insert following content:
 ```
 [Service]
@@ -46,7 +46,7 @@ Result:
 ```
 Environment=HTTP_PROXY=http://xxx.com:888/ HTTPS_PROXY=http://xxx.com:888/
 ```
-Check
+###Check
 `docker run hello-world`
 
 Result:
