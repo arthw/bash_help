@@ -13,8 +13,9 @@ sudo usermod -aG docker $USER
 
 ### Add proxy for docker pull
 ```
-sudo mkdir -p /etc/systemd/system/docker.service
+sudo mkdir -p /etc/systemd/system/docker.service.d
 ```
+CMD
 ```
 sudo vi  /etc/systemd/system/docker.service.d/https-proxy.conf
 ```
@@ -23,7 +24,7 @@ Insert following content:
 [Service]
 Environment="HTTPS_PROXY=http://xxx.com:888/"
 ```
-
+CMD
 ```
 sudo vi  /etc/systemd/system/docker.service.d/http-proxy.conf
 ```
