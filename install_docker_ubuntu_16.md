@@ -58,3 +58,25 @@ latest: Pulling from library/hello-world
 Digest: sha256:2557e3c07ed1e38f26e389462d03ed943586f744621577a99efb77324b0fe535
 Status: Downloaded newer image for hello-world:latest
 ```
+
+### Docker hub mirror
+```
+sudo mkdir -p /etc/docker
+sudo vi /etc/docker/daemon.json
+```
+Add:
+```
+{
+    "registry-mirrors": [
+        "https://1nj0zren.mirror.aliyuncs.com",
+        "https://docker.mirrors.ustc.edu.cn",
+        "http://f1361db2.m.daocloud.io",
+        "https://registry.docker-cn.com"
+    ]
+}
+```
+```
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
